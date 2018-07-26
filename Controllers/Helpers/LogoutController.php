@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Controllers\Helpers;
+declare(strict_types=1);
 
-use App\Controllers\Controller;
+namespace App\Controllers\Helpers;
 
 use App\Core\SessionManagement;
 use App\Core\Request;
 
-class LogoutController extends Controller
+class LogoutController
 {
 
     private $session;
@@ -15,13 +15,6 @@ class LogoutController extends Controller
     public function __construct(SessionManagement $session)
     {
         $this->session = $session;
-    }
-
-    public function index() : void
-    {
-
-        Controller::renderView('Helpers/Logout');
-
     }
 
     public function logout() : void
@@ -38,7 +31,3 @@ class LogoutController extends Controller
     }
 
 }
-
-$logout = new LogoutController(new SessionManagement());
-$logout->index();
-$logout->logout();

@@ -11,8 +11,8 @@ return array(
     'App\\Controllers\\Helpers\\LogoutController' => $baseDir . '/Controllers/Helpers/LogoutController.php',
     'App\\Core\\Database\\Connection' => $baseDir . '/Core/Database/Connection.php',
     'App\\Core\\Database\\QueryBuilder' => $baseDir . '/Core/Database/QueryBuilder.php',
-    'App\\Core\\FlashBag' => $baseDir . '/Core/FlashBag.php',
     'App\\Core\\Interfaces\\FlashBagInterface' => $baseDir . '/Core/Interfaces/FlashBagInterface.php',
+    'App\\Core\\Messages\\FlashBag' => $baseDir . '/Core/FlashBagMessages.php',
     'App\\Core\\Request' => $baseDir . '/Core/Request.php',
     'App\\Core\\Router' => $baseDir . '/Core/Router.php',
     'App\\Core\\Security\\Auth' => $baseDir . '/Core/Security/Authorization.php',
@@ -25,5 +25,4 @@ return array(
     'ComposerAutoloaderInit4dda8b8dae46899a97d56d698e2290b2' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2' => $vendorDir . '/composer/autoload_static.php',
-    'Test\\Controller\\FlashMessages' => $baseDir . '/Controllers/Helpers/TestController.php',
 );

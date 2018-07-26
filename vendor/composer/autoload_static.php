@@ -12,8 +12,8 @@ class ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2
         'App\\Controllers\\Helpers\\LogoutController' => __DIR__ . '/../..' . '/Controllers/Helpers/LogoutController.php',
         'App\\Core\\Database\\Connection' => __DIR__ . '/../..' . '/Core/Database/Connection.php',
         'App\\Core\\Database\\QueryBuilder' => __DIR__ . '/../..' . '/Core/Database/QueryBuilder.php',
-        'App\\Core\\FlashBag' => __DIR__ . '/../..' . '/Core/FlashBag.php',
         'App\\Core\\Interfaces\\FlashBagInterface' => __DIR__ . '/../..' . '/Core/Interfaces/FlashBagInterface.php',
+        'App\\Core\\Messages\\FlashBag' => __DIR__ . '/../..' . '/Core/FlashBagMessages.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/Core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/Core/Router.php',
         'App\\Core\\Security\\Auth' => __DIR__ . '/../..' . '/Core/Security/Authorization.php',
@@ -26,7 +26,6 @@ class ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2
         'ComposerAutoloaderInit4dda8b8dae46899a97d56d698e2290b2' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2' => __DIR__ . '/..' . '/composer/autoload_static.php',
-        'Test\\Controller\\FlashMessages' => __DIR__ . '/../..' . '/Controllers/Helpers/TestController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

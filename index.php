@@ -11,3 +11,6 @@ use App\Core\{Router, Request};
 
     require 'Routes.php';
     require $Router->direct($Request::uri());
+
+    /* Require front controller */
+    require 'Controllers/FrontController.php';

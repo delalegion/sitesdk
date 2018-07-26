@@ -9,11 +9,11 @@ use App\Controllers\Controller;
 //use App\Core\Security\Auth;
 use App\Core\Database\Connection;
 use App\Core\{Request, SessionManagement};
+use App\Core\Messages\FlashBag;
 
 use App\Model\Service\Authorization\Login;
 use App\Model\Service\Helpers\LoginData;
 use App\Model\Query\View\SQLUserView;
-
 
 
 $session = new SessionManagement();
@@ -28,7 +28,6 @@ class LoginController extends Controller
 {
 
     public $session;
-    public $request;
     public $connection;
 
     public function __construct(SessionManagement $sessionManagement, Connection $connection)
@@ -40,9 +39,7 @@ class LoginController extends Controller
     public function index() : void
     {
 
-        Controller::renderView(
-            'Authorization/Login'
-        );
+        Controller::renderView('Authorization/Login');
 
     }
 
@@ -54,7 +51,7 @@ class LoginController extends Controller
             $email = $request->get('email');
             $password = $request->get('password');
 
-            $login = new Login( new SQLUserView($this->connection->make()), $this->session );
+            $login = new Login( new SQLUserView($this->connection->make()), $this->session, new FlashBag() );
             $login->login( new LoginData($email, $password) );
 
 //            try {
@@ -68,7 +65,3 @@ class LoginController extends Controller
     }
 
 }
-
-$login = new LoginController(new SessionManagement(), new Connection());
-$login->index();
-$login->login(new Request());

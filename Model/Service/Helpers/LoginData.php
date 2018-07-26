@@ -25,4 +25,5 @@ final class LoginData
     {
         return $this->password;
     }
+
 }
