@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a5ff9de-ddbe-4d5f-89fc-c51e8fc077f2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Controllers/FrontController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Core/FlashBagMessages.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Public/css/public.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Core/LoginController.php" afterPath="$PROJECT_DIR$/Controllers/Core/LoginController.php" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Helpers/LogoutController.php" afterPath="$PROJECT_DIR$/Controllers/Helpers/LogoutController.php" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Helpers/TestController.php" afterPath="$PROJECT_DIR$/Controllers/Helpers/TestController.php" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Helpers/TestController2.php" afterPath="$PROJECT_DIR$/Controllers/Helpers/TestController2.php" />
-      <change beforePath="$PROJECT_DIR$/Core/FlashBag.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Core/Interfaces/FlashBagInterface.php" afterPath="$PROJECT_DIR$/Core/Interfaces/FlashBagInterface.php" />
-      <change beforePath="$PROJECT_DIR$/Model/Service/Authorization/LoginService.php" afterPath="$PROJECT_DIR$/Model/Service/Authorization/LoginService.php" />
-      <change beforePath="$PROJECT_DIR$/Model/Service/Helpers/LoginData.php" afterPath="$PROJECT_DIR$/Model/Service/Helpers/LoginData.php" />
       <change beforePath="$PROJECT_DIR$/View/Authorization/Login.php" afterPath="$PROJECT_DIR$/View/Authorization/Login.php" />
-      <change beforePath="$PROJECT_DIR$/View/Helpers/Logout.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/Controllers/Core/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="720">
-              <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+              <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
               <folding>
                 <element signature="e#66#97#0#PHP" expanded="true" />
               </folding>
@@ -48,16 +34,16 @@
         <entry file="file://$PROJECT_DIR$/Controllers/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+              <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/Service/Authorization/LoginService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
+            <state relative-caret-position="254">
               <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="e#77#119#0#PHP" expanded="true" />
@@ -70,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/Controllers/Helpers/TestController2.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/Controllers/FrontController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="10" column="2" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="2" />
+              <caret line="10" column="2" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="2" />
               <folding>
                 <element signature="e#33#75#0#PHP" expanded="true" />
               </folding>
@@ -88,7 +74,46 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Login.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/View/Authorization/Login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+              <folding>
+                <element signature="e#844#875#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="public.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/css/public.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlashBagMessages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Core/FlashBagMessages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,9 +160,10 @@
         <option value="$PROJECT_DIR$/Core/FlashBagMessages.php" />
         <option value="$PROJECT_DIR$/Core/Interfaces/FlashBagInterface.php" />
         <option value="$PROJECT_DIR$/Controllers/Core/LoginController.php" />
-        <option value="$PROJECT_DIR$/View/Authorization/Login.php" />
         <option value="$PROJECT_DIR$/Model/Service/Authorization/LoginService.php" />
         <option value="$PROJECT_DIR$/Controllers/Helpers/TestController2.php" />
+        <option value="$PROJECT_DIR$/Public/css/public.css" />
+        <option value="$PROJECT_DIR$/View/Authorization/Login.php" />
       </list>
     </option>
   </component>
@@ -189,6 +215,22 @@
               <item name="Core" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Interfaces" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="sitesdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sitesdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sitesdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sitesdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="sitesdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sitesdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -200,15 +242,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/xampp/htdocs/sitesdk/View/Authorization/Login.php&#10;Fl&#9;FILE&#9;file://C:/xampp/htdocs/sitesdk/Core/FlashMessages.php" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\sitesdk" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\sitesdk\Core\Security" />
       <recent name="C:\xampp\htdocs\sitesdk\Model\Query\Interfaces" />
       <recent name="C:\xampp\htdocs\sitesdk\Controllers\Core" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\sitesdk" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -258,12 +301,12 @@
       <workItem from="1532517915232" duration="11813000" />
       <workItem from="1532555261728" duration="2828000" />
       <workItem from="1532598687712" duration="8746000" />
-      <workItem from="1532628665523" duration="2907000" />
+      <workItem from="1532628665523" duration="10141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133282000" />
+    <option name="totallyTimeSpent" value="140516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -302,10 +345,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../site/core/Router.php" />
-    <entry file="file://$PROJECT_DIR$/../site/Routes.php" />
-    <entry file="file://$PROJECT_DIR$/../site/core/Request.php" />
-    <entry file="file://$PROJECT_DIR$/../site/index.php" />
     <entry file="file://$PROJECT_DIR$/../site/core/Bootstrap.php" />
     <entry file="file://$PROJECT_DIR$/controllers/404.php" />
     <entry file="file://$PROJECT_DIR$/core/Bootstrap.php" />
@@ -439,6 +478,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="56" lean-forward="true" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -453,6 +493,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -476,13 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/FlashBagMessages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -491,13 +525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/Authorization/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -505,7 +532,7 @@
     <entry file="file://$PROJECT_DIR$/Controllers/Core/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
             <element signature="e#66#97#0#PHP" expanded="true" />
           </folding>
@@ -515,7 +542,7 @@
     <entry file="file://$PROJECT_DIR$/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -528,10 +555,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Public/js/uikit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-96049">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1532635508465" expanded="true" signature="272037:272077" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/FlashBagMessages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/Helpers/TestController2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -539,7 +593,7 @@
     <entry file="file://$PROJECT_DIR$/Controllers/FrontController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="2" />
+          <caret line="10" column="2" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="2" />
           <folding>
             <element signature="e#33#75#0#PHP" expanded="true" />
           </folding>
@@ -548,10 +602,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Model/Service/Authorization/LoginService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
+        <state relative-caret-position="254">
           <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#77#119#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/uikit.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4512">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Authorization/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+          <folding>
+            <element signature="e#844#875#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
