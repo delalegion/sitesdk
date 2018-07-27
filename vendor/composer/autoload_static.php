@@ -22,6 +22,7 @@ class ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2
         'App\\Model\\Query\\View\\SQLUserView' => __DIR__ . '/../..' . '/Model/Query/View/SQLUserView.php',
         'App\\Model\\Service\\Authorization\\Login' => __DIR__ . '/../..' . '/Model/Service/Authorization/LoginService.php',
         'App\\Model\\Service\\Helpers\\LoginData' => __DIR__ . '/../..' . '/Model/Service/Helpers/LoginData.php',
+        'App\\Model\\Service\\Helpers\\UserData' => __DIR__ . '/../..' . '/Model/Service/Helpers/UserData.php',
         'BoardController' => __DIR__ . '/../..' . '/Controllers/Core/BoardController.php',
         'ComposerAutoloaderInit4dda8b8dae46899a97d56d698e2290b2' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',

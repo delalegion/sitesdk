@@ -7,16 +7,28 @@ namespace App\Core;
 class SessionManagement
 {
 
+    /**
+     * @return bool
+     */
     public function start()
     {
         return session_start();
     }
 
+    /**
+     * @param string $name
+     * @param string $value
+     * @return string
+     */
     public function set(string $name, string $value) : string
     {
         return $_SESSION[$name] = $value;
     }
 
+    /**
+     * @param string $name
+     * @return mixed
+     */
     public function get(string $name)
     {
         if ( isset($_SESSION[$name]) )
@@ -25,31 +37,21 @@ class SessionManagement
         }
     }
 
+    /**
+     * @param string $name
+     */
     public function delete(string $name) : void
     {
         unset($_SESSION[$name]);
     }
 
+    /**
+     *
+     */
     public function destroyAll() : void
     {
         session_destroy();
         session_unset();
-    }
-
-    public function setFlashbag(string $name, string $message) : string
-    {
-        $session = $_SESSION['flashbag'][$name] = $message;
-        return $session;
-    }
-//    public function cleanFlashbag() : void
-//    {
-//        unset($_SESSION['flashbag']);
-//    }
-    public function getFlashbag(string $name)
-    {
-        $error = $_SESSION['flashbag'][$name] ?? null;
-        unset($_SESSION['flashbag']);
-        return $error;
     }
 
 }

@@ -21,6 +21,7 @@ return array(
     'App\\Model\\Query\\View\\SQLUserView' => $baseDir . '/Model/Query/View/SQLUserView.php',
     'App\\Model\\Service\\Authorization\\Login' => $baseDir . '/Model/Service/Authorization/LoginService.php',
     'App\\Model\\Service\\Helpers\\LoginData' => $baseDir . '/Model/Service/Helpers/LoginData.php',
+    'App\\Model\\Service\\Helpers\\UserData' => $baseDir . '/Model/Service/Helpers/UserData.php',
     'BoardController' => $baseDir . '/Controllers/Core/BoardController.php',
     'ComposerAutoloaderInit4dda8b8dae46899a97d56d698e2290b2' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',

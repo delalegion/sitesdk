@@ -1,24 +1,5 @@
-<!doctype html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Logowanie</title>
 
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css" />
-
-    <!-- Public CSS -->
-    <link rel="stylesheet" href="./Public/css/public.css" />
-
-    <!-- UIkit JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit-icons.min.js"></script>
-
-</head>
-<body>
+<?php require './View/Template/Header.php'; ?>
 
 <div class="uk-container uk-container-small uk-margin-medium-top">
 
@@ -61,15 +42,25 @@
                         <input type="password" id="password" class="password uk-input" name="password" placeholder="Podaj hasło">
                     </div>
                 </div>
+                <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                    <label><input class="uk-checkbox" type="checkbox"> Zapamiętaj mnie</label>
+                </div>
                 <div class="uk-margin">
                     <input type="submit" class="uk-button uk-button-primary" name="submit" value="Zaloguj się">
                 </div>
 
             </form>
 
-            <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                <label><input class="uk-checkbox" type="checkbox"> Zapamiętaj mnie</label>
+            <hr>
+
+            <div class="uk-margin">
+                <div class="uk-text-center">
+                    <p>Nie posiadasz jeszcze konta?</p>
+                    <button class="uk-button uk-button-default"><span uk-icon="icon: users"></span> Stwórz nowe konto</button>
+                </div>
             </div>
+
+
 
     </div>
 
@@ -77,5 +68,4 @@
 
 </div>
 
-</body>
-</html>
+<?php require './View/Template/Footer.php'; ?>

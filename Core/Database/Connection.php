@@ -6,6 +6,9 @@ use PDO;
 class Connection
 {
 
+    /**
+     * @return PDO
+     */
     public function make() {
 
         try {

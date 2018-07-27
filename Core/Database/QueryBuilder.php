@@ -8,11 +8,19 @@ class QueryBuilder
 
     protected $pdo;
 
+    /**
+     * QueryBuilder constructor.
+     * @param PDO $pdo
+     */
     public function __construct(\PDO $pdo)
     {
         $this->pdo = $pdo;
     }
 
+    /**
+     * @param $table
+     * @return array
+     */
     public function selectAll($table)
     {
         $statement = $this->pdo->prepare("select * from {$table}");
@@ -21,6 +29,10 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
+    /**
+     * @param $email
+     * @return mixed
+     */
     public function selectUserLogin($email)
     {
         $statement = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");

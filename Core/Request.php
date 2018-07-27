@@ -6,6 +6,10 @@ namespace App\Core;
 
 class Request
 {
+
+    /**
+     * @return string
+     */
     public static function uri()
     {
         if ( isset($_GET['url']) )
@@ -15,6 +19,10 @@ class Request
 
     }
 
+    /**
+     * @param string $input
+     * @return mixed
+     */
     public function get(string $input)
     {
         if ( isset($_POST[$input]) )
@@ -23,6 +31,9 @@ class Request
         }
     }
 
+    /**
+     * @param string $link
+     */
     public static function redirectTo(string $link)
     {
         return header('Location: ' . $link);

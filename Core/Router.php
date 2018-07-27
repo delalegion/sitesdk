@@ -2,11 +2,16 @@
 
 namespace App\Core;
 
+use App\Core\Request;
+
 class Router
 {
 
     protected $routes = [];
 
+    /**
+     * @param $routes
+     */
     public function define($routes)
     {
 
@@ -14,6 +19,10 @@ class Router
 
     }
 
+    /**
+     * @param $uri
+     * @return mixed
+     */
     public function direct($uri)
     {
 
@@ -22,7 +31,9 @@ class Router
             return $this->routes[$uri];
         }
         else {
-            throw new \InvalidArgumentException("This route is not found in uri.");
+
+            Request::redirectTo('404');
+//            throw new \InvalidArgumentException("This route is not found in uri.");
         }
 
     }

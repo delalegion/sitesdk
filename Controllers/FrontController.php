@@ -8,6 +8,8 @@ use App\Core\Database\Connection;
 use App\Controllers\Core\LoginController;
 use App\Controllers\Helpers\LogoutController;
 
+
+
 /*
  * Run: controllers section
  *
@@ -27,5 +29,13 @@ if ( Request::uri() == 'logout' )
 {
     $logoutController = new LogoutController( new SessionManagement() );
     $logoutController->logout();
+}
+
+// Board controller
+if ( Request::uri() == 'board' ) {
+
+    $boardController = new BoardController( new SessionManagement(), new Connection() );
+    $boardController->index();
+
 }
 

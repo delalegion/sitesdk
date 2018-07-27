@@ -1,4 +1,21 @@
-.uk-background-green
-{
+html, body {
+    height: 100%;
+}
+.body-grey {
+    background: #f0f0f0;
+}
+.uk-background-green {
     background: #00bc3f;
+}
+.uk-background-dark {
+    background: #222;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.uk-dropdown-nav>li>a.uk-button-danger {
+    color: #fff;
+}
+.content-background {
+    min-height: 100%;
+    background-color: #F0F0F0;
 }

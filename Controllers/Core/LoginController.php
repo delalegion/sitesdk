@@ -30,12 +30,20 @@ class LoginController extends Controller
     public $session;
     public $connection;
 
+    /**
+     * LoginController constructor.
+     * @param SessionManagement $sessionManagement
+     * @param Connection $connection
+     */
     public function __construct(SessionManagement $sessionManagement, Connection $connection)
     {
         $this->session = $sessionManagement;
         $this->connection = $connection;
     }
 
+    /**
+     *
+     */
     public function index() : void
     {
 
@@ -43,6 +51,9 @@ class LoginController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     */
     public function login(Request $request) : void
     {
 
@@ -53,12 +64,6 @@ class LoginController extends Controller
 
             $login = new Login( new SQLUserView($this->connection->make()), $this->session, new FlashBag() );
             $login->login( new LoginData($email, $password) );
-
-//            try {
-//                $login->login(new LoginData($email, $password));
-//            } catch (\Exception $exception) {
-//                print '<a href="https://www.youtube.com/watch?v=u9erhDRkCD0">No coś nie pykło edwidentnie.</a>';
-//            }
 
         }
 
