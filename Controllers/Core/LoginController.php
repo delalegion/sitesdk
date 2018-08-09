@@ -15,14 +15,13 @@ use App\Model\Service\Authorization\Login;
 use App\Model\Service\Helpers\LoginData;
 use App\Model\Query\View\SQLUserView;
 
-
-$session = new SessionManagement();
-$session->start();
-
-if ( $session->get('logged') )
-{
-    Request::redirectTo('board');
-}
+//$session = new SessionManagement();
+//$session->start();
+//
+//if ( $session->get('logged') )
+//{
+//    Request::redirectTo('board');
+//}
 
 class LoginController extends Controller
 {

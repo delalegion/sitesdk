@@ -1,16 +1,11 @@
 <?php
 
-$Router->define(array(
+$Router->get('', 'Controllers/index.php');
+$Router->get('start', 'Controllers/index.php');
 
-    '' => 'Controllers/index.php',
-    'start' => 'Controllers/index.php',
-    'login' => 'Controllers/Core/LoginController.php',
-    'board' => 'Controllers/Core/BoardController.php',
-    'logout' => 'Controllers/Helpers/LogoutController.php',
-    'test' => 'Controllers/Helpers/TestController.php',
-    'test2' => 'Controllers/Helpers/TestController2.php',
+$Router->get('login', 'Controllers/Core/LoginController.php');
+$Router->get('board', 'Controllers/Core/BoardController.php');
+$Router->get('logout', 'Controllers/Helpers/LogoutController.php');
 
-    /* 404 page */
-    '404' => 'View/Helpers/404.php'
-
-));
+$Router->get('404', 'View/Helpers/404.php');
+$Router->get('test2', 'Controllers/Helpers/TestController2.php');

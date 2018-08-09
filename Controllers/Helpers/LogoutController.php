@@ -19,8 +19,6 @@ class LogoutController
 
     public function logout() : void
     {
-        //Start session
-        $this->session->start();
 
         //Destroy session
         $this->session->destroyAll();

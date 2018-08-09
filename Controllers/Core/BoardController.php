@@ -8,13 +8,11 @@ use App\Core\Database\Connection;
 use App\Core\SessionManagement;
 use App\Core\Request;
 
-$session = new SessionManagement();
-$session->start();
-
-if ( !$session->get('logged') )
-{
-    Request::redirectTo('login');
-}
+//
+//if ( !$session->get('logged') )
+//{
+//    Request::redirectTo('login');
+//}
 
 class BoardController extends Controller
 {

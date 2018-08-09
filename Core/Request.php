@@ -12,10 +12,12 @@ class Request
      */
     public static function uri()
     {
-        if ( isset($_GET['url']) )
-        {
-            return trim($_GET['url'], '/');
-        }
+//        if ( isset($_GET['url']) )
+//        {
+//            return trim($_GET['url'], '/');
+//        }
+
+        return trim($_SERVER['REQUEST_URI'], '/');
 
     }
 

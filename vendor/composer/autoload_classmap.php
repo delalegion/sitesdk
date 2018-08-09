@@ -20,6 +20,7 @@ return array(
     'App\\Model\\Query\\Interfaces\\UserQueryInterface' => $baseDir . '/Model/Query/Interfaces/UserQueryInterface.php',
     'App\\Model\\Query\\View\\SQLUserView' => $baseDir . '/Model/Query/View/SQLUserView.php',
     'App\\Model\\Service\\Authorization\\Login' => $baseDir . '/Model/Service/Authorization/LoginService.php',
+    'App\\Model\\Service\\Authorization\\UserService' => $baseDir . '/Model/Service/Authorization/UserService.php',
     'App\\Model\\Service\\Helpers\\LoginData' => $baseDir . '/Model/Service/Helpers/LoginData.php',
     'App\\Model\\Service\\Helpers\\UserData' => $baseDir . '/Model/Service/Helpers/UserData.php',
     'BoardController' => $baseDir . '/Controllers/Core/BoardController.php',

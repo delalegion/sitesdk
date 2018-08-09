@@ -2,28 +2,16 @@
 
 namespace App\Core;
 
-use App\Core\Request;
-
 class Router
 {
 
-    protected $routes = [];
+    public $routes = [];
 
     /**
-     * @param $routes
-     */
-    public function define($routes)
-    {
-
-        $this->routes = $routes;
-
-    }
-
-    /**
-     * @param $uri
+     * @param string $uri
      * @return mixed
      */
-    public function direct($uri)
+    public function direct(string $uri)
     {
 
         if (array_key_exists($uri, $this->routes))
@@ -36,6 +24,16 @@ class Router
 //            throw new \InvalidArgumentException("This route is not found in uri.");
         }
 
+    }
+
+
+    /**
+     * @param string $uri
+     * @param string $controller
+     */
+    public function get(string $uri, string $controller)
+    {
+        $this->routes[$uri] = $controller;
     }
 
 }

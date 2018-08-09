@@ -55,4 +55,12 @@ final class UserData
         return $this->user['id'];
     }
 
+    /**
+     * @return string
+     */
+    public function getAdminInfo()
+    {
+        return $this->user['is_admin'];
+    }
+
 }
