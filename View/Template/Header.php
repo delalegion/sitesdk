@@ -7,11 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Logowanie</title>
 
+    <?php
+
+        use App\Config;
+
+        echo '<base href="' . Config::getUrlBase() . '" />';
+
+    ?>
+
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/css/uikit.min.css" />
 
     <!-- Public CSS -->
-    <link rel="stylesheet" href="./Public/css/public.css" />
+    <link rel="stylesheet" href="/Public/css/public.css" />
 
     <!-- UIkit JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.10/js/uikit.min.js"></script>

@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Core\Database;
+
 use PDO;
+use App\Config;
 
 class Connection
 {
@@ -13,7 +15,11 @@ class Connection
 
         try {
 
-            return new PDO("mysql:host=localhost;dbname=site", "root", "");
+            return new PDO(
+                Config::getHost() . ';dbname=' . Config::getDbName(),
+                Config::getUserName(),
+                Config::getPassword()
+            );
 
         } catch(PDOException $e) {
 

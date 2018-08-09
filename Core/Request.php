@@ -12,13 +12,7 @@ class Request
      */
     public static function uri()
     {
-//        if ( isset($_GET['url']) )
-//        {
-//            return trim($_GET['url'], '/');
-//        }
-
         return trim($_SERVER['REQUEST_URI'], '/');
-
     }
 
     /**
@@ -38,7 +32,7 @@ class Request
      */
     public static function redirectTo(string $link)
     {
-        return header('Location: ' . $link);
+        return header('Location: http://localhost:8885/' . $link);
     }
 
 }

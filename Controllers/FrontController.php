@@ -2,13 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Core\Security\Auth;
 use App\Core\{Request, SessionManagement};
 use App\Core\Database\Connection;
 
-use App\Controllers\Core\LoginController;
-use App\Controllers\Helpers\LogoutController;
-
+use App\Core\Security\Auth;
 use App\Model\Service\Helpers\UserData;
 use App\Model\Service\Authorization\UserService;
 
@@ -31,7 +28,7 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
     {
         if ( $Auth->checkAccessToPage('isLogged') == true ) { Request::redirectTo('board'); }
 
-        $loginController = new LoginController( new SessionManagement(), new Connection() );
+        $loginController = new App\Controllers\Core\LoginController( new SessionManagement(), new Connection() );
         $loginController->login( new Request() );
         $loginController->index();
     }
@@ -41,7 +38,7 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
     {
         if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
 
-        $logoutController = new LogoutController( new SessionManagement() );
+        $logoutController = new App\Controllers\Helpers\LogoutController( new SessionManagement() );
         $logoutController->logout();
     }
 
@@ -50,7 +47,17 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
     {
         if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
 
-        $boardController = new BoardController( new SessionManagement(), new Connection() );
+        $boardController = new App\Controllers\BoardController( new SessionManagement(), new Connection() );
+        $boardController->index();
+    }
+
+    // Board controller
+    if ( Request::uri() == 'admin/dashboard' )
+    {
+        if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
+        if ( $Auth->checkAccessToPage('isAdmin') == false ) { Request::redirectTo('board'); }
+
+        $boardController = new App\Controllers\Core\Dashboards\Admin\AdminDashboard( new SessionManagement(), new Connection() );
         $boardController->index();
     }
 

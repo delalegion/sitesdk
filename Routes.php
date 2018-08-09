@@ -9,3 +9,6 @@ $Router->get('logout', 'Controllers/Helpers/LogoutController.php');
 
 $Router->get('404', 'View/Helpers/404.php');
 $Router->get('test2', 'Controllers/Helpers/TestController2.php');
+
+/** Admin section */
+$Router->get('admin/dashboard', 'Controllers/Core/Dashboards/Admin/Dashboard.php');

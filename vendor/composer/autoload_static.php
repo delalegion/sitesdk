@@ -7,7 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2
 {
     public static $classMap = array (
+        'App\\Config' => __DIR__ . '/../..' . '/Config.php',
+        'App\\Controllers\\BoardController' => __DIR__ . '/../..' . '/Controllers/Core/BoardController.php',
         'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/Controllers/Controller.php',
+        'App\\Controllers\\Core\\Dashboards\\Admin\\AdminDashboard' => __DIR__ . '/../..' . '/Controllers/Core/Dashboards/Admin/Dashboard.php',
         'App\\Controllers\\Core\\LoginController' => __DIR__ . '/../..' . '/Controllers/Core/LoginController.php',
         'App\\Controllers\\Helpers\\LogoutController' => __DIR__ . '/../..' . '/Controllers/Helpers/LogoutController.php',
         'App\\Core\\Database\\Connection' => __DIR__ . '/../..' . '/Core/Database/Connection.php',
@@ -24,7 +27,6 @@ class ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2
         'App\\Model\\Service\\Authorization\\UserService' => __DIR__ . '/../..' . '/Model/Service/Authorization/UserService.php',
         'App\\Model\\Service\\Helpers\\LoginData' => __DIR__ . '/../..' . '/Model/Service/Helpers/LoginData.php',
         'App\\Model\\Service\\Helpers\\UserData' => __DIR__ . '/../..' . '/Model/Service/Helpers/UserData.php',
-        'BoardController' => __DIR__ . '/../..' . '/Controllers/Core/BoardController.php',
         'ComposerAutoloaderInit4dda8b8dae46899a97d56d698e2290b2' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit4dda8b8dae46899a97d56d698e2290b2' => __DIR__ . '/..' . '/composer/autoload_static.php',
