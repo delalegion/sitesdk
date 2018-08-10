@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Model\Service\Authorization;
 
-use App\Core\{Request, SessionManagement};
+use App\Core\{
+    Interfaces\FlashBagInterface, Request, SessionManagement
+};
 use App\Core\Messages\FlashBag;
 
 use App\Model\Service\Helpers\LoginData;
@@ -17,13 +19,14 @@ class Login
     private $session;
     private $message;
 
+
     /**
      * Login constructor.
      * @param UserQueryInterface $userQuery
      * @param SessionManagement $session
-     * @param FlashBag $message
+     * @param FlashBagInterface $message
      */
-    public function __construct(UserQueryInterface $userQuery, SessionManagement $session, FlashBag $message)
+    public function __construct(UserQueryInterface $userQuery, SessionManagement $session, FlashBagInterface $message)
     {
         $this->userQuery = $userQuery;
         $this->session = $session;
@@ -36,8 +39,10 @@ class Login
     public function login(LoginData $loginData): void
     {
 
+        // Email filtering
         if (filter_var($loginData->getEmail(), FILTER_VALIDATE_EMAIL)) {
 
+            // Taking user data
             $user = $this->userQuery->findByEmail($loginData->getEmail());
 
             if ($user)
@@ -48,7 +53,7 @@ class Login
                     $this->session->set('logged', 'true');
                     $this->session->set('userEmail', $loginData->getEmail());
 
-                    Request::redirectTo('board');
+                    ( $user['is_admin'] == true ) ? Request::redirectTo('admin/dashboard') : Request::redirectTo('user/dashboard');
 
                 } else {$this->message->add('error', 'Podałeś błędne dane logowania.'); }
 

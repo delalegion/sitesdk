@@ -9,7 +9,7 @@ use App\Controllers\Controller;
 use App\Core\Database\Connection;
 use App\Core\SessionManagement;
 
-class AdminDashboard
+class AdminDashboard extends Controller
 {
 
     public $session;

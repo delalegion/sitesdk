@@ -26,7 +26,7 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
     // Login controller
     if ( Request::uri() == 'login' )
     {
-        if ( $Auth->checkAccessToPage('isLogged') == true ) { Request::redirectTo('board'); }
+        if ( $Auth->checkAccessToPage('isLogged') == true ) { Request::redirectTo('user/dashboard'); }
 
         $loginController = new App\Controllers\Core\LoginController( new SessionManagement(), new Connection() );
         $loginController->login( new Request() );
@@ -42,23 +42,28 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
         $logoutController->logout();
     }
 
-    // Board controller
-    if ( Request::uri() == 'board' )
-    {
-        if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
+    //
+    //  User section
+    //
+        if ( Request::uri() == 'user/dashboard' )
+        {
+            if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
 
-        $boardController = new App\Controllers\BoardController( new SessionManagement(), new Connection() );
-        $boardController->index();
-    }
+            $userDashboard = new App\Controllers\Core\Dashboards\User\UserDashboard( new SessionManagement(), new Connection() );
+            $userDashboard->index();
+        }
 
-    // Board controller
-    if ( Request::uri() == 'admin/dashboard' )
-    {
-        if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
-        if ( $Auth->checkAccessToPage('isAdmin') == false ) { Request::redirectTo('board'); }
 
-        $boardController = new App\Controllers\Core\Dashboards\Admin\AdminDashboard( new SessionManagement(), new Connection() );
-        $boardController->index();
-    }
+    //
+    //  Admin section
+    //
+        if ( Request::uri() == 'admin/dashboard' )
+        {
+            if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
+            if ( $Auth->checkAccessToPage('isAdmin') == false ) { Request::redirectTo('user/dashboard'); }
+
+            $adminDashboard = new App\Controllers\Core\Dashboards\Admin\AdminDashboard( new SessionManagement(), new Connection() );
+            $adminDashboard->index();
+        }
 
 

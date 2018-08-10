@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Controllers;
+namespace App\Controllers\Core\Dashboards\User;
 
 use App\Controllers\Controller;
 
 use App\Core\Database\Connection;
 use App\Core\SessionManagement;
 
-class BoardController extends Controller
+class UserDashboard extends Controller
 {
 
     public $session;
@@ -32,7 +32,7 @@ class BoardController extends Controller
     public function index() : void
     {
 
-        Controller::renderView('Core/Board');
+        Controller::renderView('Core/Dashboards/User/Dashboard');
 
     }
 

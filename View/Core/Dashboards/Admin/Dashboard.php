@@ -25,6 +25,10 @@
                                     $userData = new UserData();
                                     echo $userData->getName();
 
+                                    use App\Model\Service\Helpers\Dashboards\Admin\AdminDashboardData;
+
+                                    $dashboardData = new AdminDashboardData();
+
                                 ?>
                             <span class="uk-margin-small-left uk-label uk-label-success">ONLINE</span>
                         </a>
@@ -74,7 +78,7 @@
         </div>
     </nav>
 
-    <div class="uk-container">
+    <div class="uk-container-large uk-align-center">
         <div class="uk-alert-primary" uk-alert>
             <a class="uk-alert-close" uk-close></a>
             <p>Cześć <?php echo $userData->getName(); ?>, znajdujesz się aktualnie w panelu admina.</p>
@@ -82,7 +86,7 @@
     </div>
 
     <div class="uk-section uk-padding-remove-vertical uk-margin">
-        <div class="uk-container">
+        <div class="uk-container-large uk-align-center">
             <div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
                 <div>
                     <div class="uk-card uk-card-default uk-card-hover uk-card-body">
@@ -106,6 +110,40 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="uk-section uk-padding-remove-vertical uk-margin">
+        <div class="uk-container-large uk-align-center">
+            <table class="uk-table uk-table-striped">
+                <thead>
+                <tr>
+                    <th>Nickname</th>
+                    <th>Email</th>
+                    <th>Flaga</th>
+                    <th class="uk-width-medium">Opcje</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach ($dashboardData->getDataFromUsersTable() as $data)
+                            {
+                                echo '<tr><td><img class="uk-border-rounded uk-margin-small-right" data-src="'
+                                . $data['avatar'] .
+                                '" width="50" height="50" alt="User avatar" uk-img>'
+                                . $data['nickname'] .
+                                '</td><td class="uk-text-middle">'
+                                . $data['email'] .
+                                '</td><td class="uk-text-middle">'
+                                . ($data['is_admin'] == true ? '<span class="uk-label uk-label-danger">Admin</span>' : '<span class="uk-label uk-label-success">Użytkownik</span>') .
+                                '</td><td class="uk-text-middle">
+                                       <a href="#" class="uk-button uk-button-danger uk-margin-small-right">Dezaktywuj</a>
+                                       <a href="#" class="uk-button uk-button-primary">Edytuj</a>
+                                    </td></tr>';
+                            }
+                    ?>
+                </tbody>
+            </table>
         </div>
     </div>
 

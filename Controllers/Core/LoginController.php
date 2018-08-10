@@ -6,7 +6,6 @@ namespace App\Controllers\Core;
 
 use App\Controllers\Controller;
 
-//use App\Core\Security\Auth;
 use App\Core\Database\Connection;
 use App\Core\{Request, SessionManagement};
 use App\Core\Messages\FlashBag;
@@ -14,14 +13,6 @@ use App\Core\Messages\FlashBag;
 use App\Model\Service\Authorization\Login;
 use App\Model\Service\Helpers\LoginData;
 use App\Model\Query\View\SQLUserView;
-
-//$session = new SessionManagement();
-//$session->start();
-//
-//if ( $session->get('logged') )
-//{
-//    Request::redirectTo('board');
-//}
 
 class LoginController extends Controller
 {
