@@ -1,6 +1,43 @@
-<?php require $_SERVER["DOCUMENT_ROOT"] . '/View/Template/Header.php'; ?>
+<?php require './View/Template/Header.php'; ?>
 
-<body class="body-grey">
+<head>
+    <title>Panel kontrolny admina</title>
+</head>
+
+<?php
+
+    use App\Model\Service\Helpers\UserData;
+    $userData = new UserData();
+
+    use App\Model\Service\Helpers\Dashboards\Admin\AdminDashboardData;
+    $dashboardData = new AdminDashboardData();
+
+    use App\Core\Request;
+    $request = new Request();
+
+    use App\Config;
+    $config = new Config();
+
+    use App\Core\Messages\FlashBag;
+    use App\Core\SessionManagement;
+
+    $flash = new FlashBag();
+    $session = new SessionManagement();
+
+?>
+
+<body onload="
+<?php
+    if ( $session->get('flash_messages') )
+    {
+        $data = explode(',', $flash->display('delete'));
+
+        foreach ($data as $value)
+        {
+            echo "UIkit.notification({message: '" . $value . "', status: 'success', timeout: '125215125', pos: 'bottom-left'})";
+        }
+    }
+?>">
 
     <nav class="uk-margin uk-background-dark" uk-navbar>
         <div class="uk-navbar-left">
@@ -12,24 +49,13 @@
             <div class="uk-margin-medium-right">
                 <ul class="uk-navbar-nav">
                     <li class="uk-flex uk-flex-middle">
-                        <div class="uk-width-auto uk-margin-right">
-                            <img class="uk-border-circle uk-card-default" width="50" height="50" src="./Public/images/avatars/avatar.jpg">
+                        <div class="uk-width-auto">
+                            <img class="uk-border-circle uk-card-default" width="50" height="50" src="<?php echo $userData->getAvatar(); ?>">
                         </div>
                     </li>
                     <li>
                         <a class="uk-button-text" href="#">
-                                <?php
-
-                                    use App\Model\Service\Helpers\UserData;
-
-                                    $userData = new UserData();
-                                    echo $userData->getName();
-
-                                    use App\Model\Service\Helpers\Dashboards\Admin\AdminDashboardData;
-
-                                    $dashboardData = new AdminDashboardData();
-
-                                ?>
+                            <?php echo $userData->getName(); ?>
                             <span class="uk-margin-small-left uk-label uk-label-success">ONLINE</span>
                         </a>
                         <div uk-dropdown="pos: bottom-right; mode: click" class="uk-navbar-dropdown">
@@ -125,26 +151,33 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <?php
-                        foreach ($dashboardData->getDataFromUsersTable() as $data)
-                            {
-                                echo '<tr><td><img class="uk-border-rounded uk-margin-small-right" data-src="'
-                                . $data['avatar'] .
-                                '" width="50" height="50" alt="User avatar" uk-img>'
-                                . $data['nickname'] .
-                                '</td><td class="uk-text-middle">'
-                                . $data['email'] .
-                                '</td><td class="uk-text-middle">'
-                                . ($data['is_admin'] == true ? '<span class="uk-label uk-label-danger">Admin</span>' : '<span class="uk-label uk-label-success">Użytkownik</span>') .
-                                '</td><td class="uk-text-middle">
-                                       <a href="#" class="uk-button uk-button-danger uk-margin-small-right">Dezaktywuj</a>
-                                       <a href="#" class="uk-button uk-button-primary">Edytuj</a>
-                                    </td></tr>';
-                            }
-                    ?>
+                    <?php foreach ($dashboardData->getAllDataFromUsersTable() as $data) : ?>
+
+                        <tr>
+                            <td>
+                                <img class="uk-border-rounded uk-margin-small-right" data-src="<?php echo $data['avatar'] ?>" width="50" height="50" alt="User avatar" uk-img>
+                                <?php echo $data['nickname']; ?>
+                            </td>
+                            <td class="uk-text-middle">
+                                <?php echo $data['email']; ?>
+                            </td>
+                            <td class="uk-text-middle">
+                                <?php if ($data['is_admin'] == true): ?>
+                                    <span class="uk-label uk-label-danger">Admin</span>
+                                <?php else: ?>
+                                    <span class="uk-label uk-label-success">Użytkownik</span>
+                                <?php endif; ?>
+                            </td>
+                            <td class="uk-text-middle">
+                                <a href="admin/users/delete?user=<?php echo $data['id']; ?>" id="delete-user" class="uk-button uk-button-danger uk-margin-small-right">Dezaktywuj</a>
+                                <a href="#" class="uk-button uk-button-primary">Edytuj</a>
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
     </div>
 
-<?php require $_SERVER["DOCUMENT_ROOT"] . '/View/Template/Footer.php'; ?>
+<?php require './View/Template/Footer.php'; ?>

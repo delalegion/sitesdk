@@ -5,18 +5,21 @@ namespace App\Core;
 class Router
 {
 
-    public $routes = [];
+    protected $routes = [
+        'GET'   => [],
+        'POST'  => []
+    ];
 
     /**
      * @param string $uri
      * @return mixed
      */
-    public function direct(string $uri)
+    public function direct(string $uri, string $requestType)
     {
 
-        if (array_key_exists($uri, $this->routes))
+        if (array_key_exists($uri, $this->routes[$requestType]))
         {
-            return $this->routes[$uri];
+            return $this->routes[$requestType][$uri];
         }
         else {
 
@@ -33,7 +36,17 @@ class Router
      */
     public function get(string $uri, string $controller)
     {
-        $this->routes[$uri] = $controller;
+        $this->routes['GET'][$uri] = $controller;
     }
+
+    /**
+     * @param string $uri
+     * @param string $controller
+     */
+    public function post(string $uri, string $controller)
+    {
+        $this->routes['POST'][$uri] = $controller;
+    }
+
 
 }

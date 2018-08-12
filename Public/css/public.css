@@ -19,3 +19,33 @@ html, body {
     min-height: 100%;
     background-color: #F0F0F0;
 }
+/** NOTIFICATION **/
+
+    .uk-notification-message-success {
+        color: #fff;
+    }
+    .uk-notification-message {
+        border-radius: 3px;
+        position: relative;
+        padding: 15px;
+        background: #32d296;
+        font-size: 1.21rem;
+        line-height: 1.4;
+        cursor: pointer;
+    }
+    .uk-notification-message-success >.uk-close {
+        color: #fff;
+    }
+    .uk-notification-message-success >.uk-close:hover {
+        color: #fff;
+    }
+    .uk-notification-close {
+        top: 22px;
+    }
+    .uk-notification {
+        width: 420px;
+        left: 20px;
+    }
+
+/** OTHERS **/
+

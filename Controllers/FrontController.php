@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 use App\Core\{Request, SessionManagement};
 use App\Core\Database\Connection;
-
+use App\Core\Messages\FlashBag;
 use App\Core\Security\Auth;
+
 use App\Model\Service\Helpers\UserData;
 use App\Model\Service\Authorization\UserService;
 
@@ -14,7 +15,7 @@ $Session = new SessionManagement();
 $Session->start();
 
 // Starting Auth controller
-$Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
+$Auth = new Auth( new UserService(new UserData()), new SessionManagement());
 
 
 /*
@@ -24,12 +25,18 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
  */
 
     // Login controller
-    if ( Request::uri() == 'login' )
+    if ( Request::uri() == 'loginAction' )
     {
         if ( $Auth->checkAccessToPage('isLogged') == true ) { Request::redirectTo('user/dashboard'); }
 
         $loginController = new App\Controllers\Core\LoginController( new SessionManagement(), new Connection() );
         $loginController->login( new Request() );
+    }
+    if ( Request::uri() == 'login' )
+    {
+        if ( $Auth->checkAccessToPage('isLogged') == true ) { Request::redirectTo('user/dashboard'); }
+
+        $loginController = new App\Controllers\Core\LoginViewController();
         $loginController->index();
     }
 
@@ -65,5 +72,16 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement() );
             $adminDashboard = new App\Controllers\Core\Dashboards\Admin\AdminDashboard( new SessionManagement(), new Connection() );
             $adminDashboard->index();
         }
+
+        if ( Request::uri() == 'admin/users/delete' )
+        {
+            if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
+            if ( $Auth->checkAccessToPage('isAdmin') == false ) { Request::redirectTo('user/dashboard'); }
+
+            $deleteUsers = new App\Controllers\Core\Dashboards\Admin\DeleteUsersController( new Connection(), new Request(), new FlashBag() );
+            $deleteUsers->deleteUser();
+            $deleteUsers->index();
+        }
+
 
 

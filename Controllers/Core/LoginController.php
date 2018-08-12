@@ -14,7 +14,7 @@ use App\Model\Service\Authorization\Login;
 use App\Model\Service\Helpers\LoginData;
 use App\Model\Query\View\SQLUserView;
 
-class LoginController extends Controller
+class LoginController
 {
 
     public $session;
@@ -31,15 +31,6 @@ class LoginController extends Controller
         $this->connection = $connection;
     }
 
-    /**
-     *
-     */
-    public function index() : void
-    {
-
-        Controller::renderView('Authorization/Login');
-
-    }
 
     /**
      * @param Request $request

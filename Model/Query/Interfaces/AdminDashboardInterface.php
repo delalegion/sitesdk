@@ -12,4 +12,10 @@ interface AdminDashboardInterface
      */
     public function showAllUsers();
 
+    /**
+     * @param string $id
+     * @return mixed
+     */
+    public function deleteUserSQL(string $id);
+
 }

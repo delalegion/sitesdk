@@ -1,6 +1,10 @@
 <?php require './View/Template/Header.php'; ?>
 
-    <body class="body-grey">
+<head>
+    <title>Witamy Cię w panelu użytkownika!</title>
+</head>
+
+<body class="body-grey">
 
 <nav class="uk-margin uk-background-dark" uk-navbar>
     <div class="uk-navbar-left">

@@ -1,5 +1,8 @@
-
 <?php require './View/Template/Header.php'; ?>
+
+<head>
+    <title>Logowanie</title>
+</head>
 
 <div class="uk-container uk-container-small uk-margin-medium-top">
 
@@ -21,12 +24,11 @@
         }
     }
 
-
 ?>
 
     <div class="uk-card uk-card-secondary uk-card-body">
 
-            <form action="login" method="POST">
+            <form action="loginAction" method="POST">
 
                 <h2 class="uk-heading-line"><span>Zaloguj się do serwisu</span></h2>
 

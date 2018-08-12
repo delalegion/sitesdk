@@ -10,7 +10,7 @@ use App\Core\{Router, Request};
     $Router = new Router;
 
     require 'Routes.php';
-    require $Router->direct($Request::uri());
+    require $Router->direct($Request::uri(), $Request::method());
 
     /* Require front controller */
     require 'Controllers/FrontController.php';

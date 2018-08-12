@@ -63,4 +63,12 @@ final class UserData
         return $this->user['is_admin'];
     }
 
+    /**
+     * @return string
+     */
+    public function getAvatar()
+    {
+        return $this->user['avatar'];
+    }
+
 }
