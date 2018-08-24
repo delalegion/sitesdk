@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Controllers\Core;
 
-use App\Controllers\Controller;
-
 use App\Core\Database\Connection;
 use App\Core\{Request, SessionManagement};
 use App\Core\Messages\FlashBag;
@@ -45,6 +43,8 @@ class LoginController
 
             $login = new Login( new SQLUserView($this->connection->make()), $this->session, new FlashBag() );
             $login->login( new LoginData($email, $password) );
+
+            Request::redirectTo('login');
 
         }
 

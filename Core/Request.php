@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Core;
 
+use App\Config;
+
 class Request
 {
 
@@ -47,7 +49,7 @@ class Request
      */
     public static function redirectTo(string $link)
     {
-        return header('Location: http://localhost:8885/' . $link);
+        return header('Location: ' . Config::getUrlBase() . '/' . $link);
     }
 
 }

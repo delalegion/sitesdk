@@ -19,9 +19,9 @@
     $config = new Config();
 
     use App\Core\Messages\FlashBag;
-    use App\Core\SessionManagement;
-
     $flash = new FlashBag();
+
+    use App\Core\SessionManagement;
     $session = new SessionManagement();
 
 ?>
@@ -34,7 +34,7 @@
 
         foreach ($data as $value)
         {
-            echo "UIkit.notification({message: '" . $value . "', status: 'success', timeout: '125215125', pos: 'bottom-left'})";
+            echo "UIkit.notification({message: '" . $value . "', status: 'success', pos: 'bottom-left'})";
         }
     }
 ?>">
@@ -104,10 +104,29 @@
         </div>
     </nav>
 
-    <div class="uk-container-large uk-align-center">
-        <div class="uk-alert-primary" uk-alert>
-            <a class="uk-alert-close" uk-close></a>
-            <p>Cześć <?php echo $userData->getName(); ?>, znajdujesz się aktualnie w panelu admina.</p>
+    <div id="modal-overflow" uk-modal='{"bg-close": false}'>
+        <div class="uk-modal-dialog">
+
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Szybki samouczek oraz pomoc.</h2>
+            </div>
+
+            <div class="uk-modal-body" uk-overflow-auto>
+
+                <p>Cześć delalegion! Nasz serwis oferuje przechowalnie dla twoich plików w prosty i komfortowy sposób, o których nie musisz się martwić ponieważ będziemy je pilnować całymi dniami nocami. Aktualnie posiadasz wersje standard co daje Ci tylko 2.5 gb miejsca na twoje pliki.. to troszkę mało.. ale możesz powiększyć pakiet nawet do 100gb! By dowiedzieć się więcej szczegółów przejdź do strefy kupna.</p>
+
+                <p>Nasz serwis oferuje prostą obługę oraz edycje twoich plików. Możesz tworzyć pliki i je usuwać, tworzyć foldery z twoimi plikami oraz nawet projekty które potem będziesz mógł w prosty sposób edytować i udostepniać je znajomym!</p>
+
+                <p>Oferujemy w szerokim zakresie pomoc każdemu użytkownikowi, więc gdybyś miał pytania - pisz a my pomożemy! Ale najpierw przed zapytaniem sprawdź FAQ - może tam już jest to o co chcesz zapytać.</p>
+
+            </div>
+
+            <div class="uk-modal-footer uk-text-right">
+                <button class="uk-button uk-button-primary uk-modal-close" type="button">Rozumiem</button>
+            </div>
+
         </div>
     </div>
 
@@ -179,5 +198,15 @@
             </table>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        <?php if (!isset($_COOKIE['accept_terms'])) : ?>
+            $(document).ready(function() {
+                    UIkit.modal('#modal-overflow').show();
+            });
+        <?php endif; ?>
+
+    </script>
 
 <?php require './View/Template/Footer.php'; ?>

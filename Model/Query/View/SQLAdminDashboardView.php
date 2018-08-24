@@ -54,5 +54,4 @@ class SQLAdminDashboardView implements AdminDashboardInterface
 
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
-
 }

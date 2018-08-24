@@ -24,7 +24,6 @@ class AdminDashboardData
         $this->data = $data;
     }
 
-
     /**
      * @return array
      */
@@ -38,7 +37,7 @@ class AdminDashboardData
      * @param string $id
      * @return array
      */
-    public function getDataUserById(string $id) : array
+    public function getDataUserById(string $id)
     {
         $data = $this->data->searchUserById($id);
         return $data;

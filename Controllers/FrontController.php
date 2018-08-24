@@ -9,6 +9,9 @@ use App\Core\Security\Auth;
 
 use App\Model\Service\Helpers\UserData;
 use App\Model\Service\Authorization\UserService;
+use App\Model\Service\Helpers\Dashboards\Admin\DeleteUsers;
+
+use App\Model\Query\View\SQLAdminDashboardView;
 
 // Starting session
 $Session = new SessionManagement();
@@ -78,7 +81,9 @@ $Auth = new Auth( new UserService(new UserData()), new SessionManagement());
             if ( $Auth->checkAccessToPage('isLogged') == false ) { Request::redirectTo('login'); }
             if ( $Auth->checkAccessToPage('isAdmin') == false ) { Request::redirectTo('user/dashboard'); }
 
-            $deleteUsers = new App\Controllers\Core\Dashboards\Admin\DeleteUsersController( new Connection(), new Request(), new FlashBag() );
+            $connection = new Connection();
+
+            $deleteUsers = new App\Controllers\Core\Dashboards\Admin\DeleteUsersController( new Connection(), new Request(), new FlashBag(), new DeleteUsers(new SQLAdminDashboardView($connection->make())) );
             $deleteUsers->deleteUser();
             $deleteUsers->index();
         }

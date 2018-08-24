@@ -87,7 +87,7 @@
 
     <div class="uk-container uk-container-small">
 
-        <div class="uk-card uk-alert-danger uk-card-body uk-width-1-1@m">
+        <div class="uk-card uk-border-rounded uk-alert-danger uk-card-body uk-width-1-1@m">
             <h3 class="uk-card-title">Uwaga!</h3>
             <p>Czy na pewno chcesz usunąć konto użytkownika <?php echo $data['nickname']; ?>?
             Pamiętaj, ten proces jest nie odwracalny.</p>

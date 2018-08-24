@@ -11,7 +11,8 @@ use App\Core\Interfaces\FlashBagInterface;
 use App\Core\Request;
 
 use App\Model\Service\Helpers\Dashboards\Admin\DeleteUsers;
-use App\Model\Query\View\SQLAdminDashboardView;
+use App\Model\Service\Helpers\Dashboards\Admin\AdminDashboardData;
+
 
 class DeleteUsersController extends Controller
 {
@@ -19,18 +20,22 @@ class DeleteUsersController extends Controller
     private $connection;
     private $request;
     private $flashMessages;
+    private $data;
+
 
     /**
      * DeleteUsersController constructor.
      * @param Connection $connection
      * @param Request $request
      * @param FlashBagInterface $flashMessages
+     * @param DeleteUsers $data
      */
-    public function __construct(Connection $connection, Request $request, FlashBagInterface $flashMessages)
+    public function __construct(Connection $connection, Request $request, FlashBagInterface $flashMessages, DeleteUsers $data)
     {
         $this->connection = $connection;
         $this->request = $request;
         $this->flashMessages = $flashMessages;
+        $this->data = $data;
     }
 
     /**
@@ -46,23 +51,39 @@ class DeleteUsersController extends Controller
     /**
      *
      */
-    public function deleteUser()
+    public function deleteUser() : void
     {
 
-        if ( $this->request->getRequest('user') && $this->request->getRequest('delete') === 'yes' )
-        {
-            $delete = new DeleteUsers( new SQLAdminDashboardView( $this->connection->make() ) );
-            $delete->deleteUser($_GET['user']);
+        $dashboardData = new AdminDashboardData();
 
-            $this->flashMessages->add('delete', 'Pomyślnie usunąłeś użytkownika o ID: ' . $_GET['user']);
+        // Check if user get is isset
+        if ( $this->request->getRequest('user') ) {
 
-            $this->request::redirectTo('admin/dashboard');
-        }
+            // Check if user get is numeric and get array
+            if (is_numeric($this->request->getRequest('user')) && $dashboardData->getDataUserById($this->request->getRequest('user')) != false) {
 
-        if ( !$this->request->getRequest('user') )
-        {
-            $this->request::redirectTo('admin/dashboard');
-        }
+                // Check if delete confirm get right
+                if ( $this->request->getRequest('delete') === 'yes' )
+                {
+                    // Add message to flashbag
+                    $this->flashMessages->add('delete', 'Pomyślnie usunąłeś użytkownika o id: ' . $this->request->getRequest('user'));
+
+                    // Delete user
+                    $this->data->deleteUser($this->request->getRequest('user'));
+
+                    // Redirect to admin panel
+                    $this->request::redirectTo('admin/dashboard');
+                }
+
+            } else {
+
+                // Add message to flashbag
+                $this->flashMessages->add('delete', 'Usunięcie użytkownika nie udało się..');
+
+                // Redirect to admin panel
+                $this->request::redirectTo('admin/dashboard');
+            }
+        } else { $this->request::redirectTo('admin/dashboard'); }
 
     }
 

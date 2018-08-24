@@ -18,4 +18,10 @@ interface AdminDashboardInterface
      */
     public function deleteUserSQL(string $id);
 
+    /**
+     * @param string $id
+     * @return mixed
+     */
+    public function searchUserById(string $id);
+
 }
